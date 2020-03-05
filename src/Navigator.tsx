@@ -6,10 +6,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import IconButton from '~/components/iconButton';
 
-// Screen...
-import LoginScreen from '~/screens/authentication/login';
-
 // Route Navigators...
+import AuthenticationNavigator from '~/routes/authentication';
 import AllBooksStackNavigator from '~/routes/allBooks';
 import RatingStackNavigator from '~/routes/rating';
 import AudioStackNavigator from '~/routes/audio';
@@ -151,10 +149,11 @@ const RootNavigator = () => {
 
   return (
     <RootStack.Navigator>
-      {userToken ? (
+      {!userToken ? (
         <RootStack.Screen
-          name="CheckLogin"
-          component={LoginScreen}
+          name="Authentication_Navigator"
+          component={AuthenticationNavigator}
+          options={{ headerShown: false }}
         />        
       ) : (
         <RootStack.Screen

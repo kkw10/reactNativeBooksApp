@@ -9,6 +9,9 @@ const basicStyle = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#fff',
   },
+  AuthLayout: {
+    paddingHorizontal: 40
+  },
   font: {
     color: colorSet.strongPurple,
   },

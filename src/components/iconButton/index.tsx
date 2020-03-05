@@ -11,7 +11,9 @@ interface Props {
     | 'bar-chart'
     | 'mic'
     | 'bookmark'
-    | 'user',
+    | 'user'
+    | 'mail'
+    | 'key',
   iconSize?: number,
   iconColor?: string,
   backgroundColor?: string,
@@ -32,13 +34,14 @@ const IconButton = ({
   return (
     <>
       {onlyIcon ? (
-        <Icon
-          style={{ paddingHorizontal: 10, }}
-          name={iconName}
-          size={iconSize}
-          color={iconColor}
-          backgroundColor={backgroundColor}
-        />
+        <View style={style}>
+          <Icon
+            name={iconName}
+            size={iconSize}
+            color={iconColor}
+            backgroundColor={backgroundColor}
+          />        
+        </View>
       ) : (
         <TouchableOpacity
           style={style}
